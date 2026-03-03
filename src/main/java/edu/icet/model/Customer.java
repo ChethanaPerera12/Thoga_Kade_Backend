@@ -1,7 +1,16 @@
 package edu.icet.model;
 
-import java.util.Date;
+import jdk.jfr.DataAmount;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import java.util.Date;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Customer {
     private String id;
     private String title;
