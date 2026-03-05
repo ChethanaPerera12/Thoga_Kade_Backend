@@ -27,21 +27,44 @@ public class ItemRepositoryImpl implements ItemRepository {
 
     @Override
     public boolean addItem(Item item) {
-        return false;
+        String sql ="INSERT INTO item VALUES(?????)";
+        return jdbcTemplate.update(sql,
+                item.getItemCode(),
+                item.getDescription(),
+                item.getPackSize(),
+                item.getUnitPrice(),
+                item.getQtyOnHand()
+        ) > 0;
     }
 
     @Override
     public boolean updateItem(Item item) {
-        return false;
+        String sql = "UPDATE item SET Description=?,PackSize=?,UnitPrice=?,QtyOnHand=? WHERE ItemCode=?";
+        return jdbcTemplate.update(sql,
+                item.getDescription(),
+                item.getPackSize(),
+                item.getUnitPrice(),
+                item.getQtyOnHand(),
+                item.getItemCode()
+
+                )>0;
     }
 
     @Override
     public boolean deleteItem(String id) {
-        return false;
+        String sql ="DELETE FROM item WHERE ItemCode=?";
+        return jdbcTemplate.update(sql,id)>0;
     }
 
     @Override
-    public Item searchById(String id) {
-        return null;
+    public Item searchItemId(String id) {
+        String sql = "SELECT * FROM item WHWRE ItemCode";
+        return jdbcTemplate.queryForObject(sql, (rs, rowNum) -> new Item(
+                rs.getString(1),
+                rs.getString(2),
+                rs.getString(3),
+                rs.getDouble(4),
+                rs.getInt(5)
+        ),id);
     }
 }

@@ -1,7 +1,7 @@
 package edu.icet.service.Impl;
 
 import edu.icet.model.Item;
-import edu.icet.repository.CustomerRepository;
+import edu.icet.repository.ItemRepository;
 import edu.icet.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,29 +9,31 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class ItemServiceImpl implements ItemService {
+    @Autowired
+    ItemRepository itemRepository;
     @Override
     public List<Item> getItem() {
-        return List.of();
+        return itemRepository.getItem();
     }
 
     @Override
     public boolean addItem(Item item) {
-        return false;
+        return itemRepository.addItem(item);
     }
 
     @Override
     public boolean updateItem(Item item) {
-        return false;
+        return itemRepository.updateItem(item);
     }
 
     @Override
     public boolean deleteItem(String id) {
-        return false;
+        return itemRepository.deleteItem(id);
     }
 
     @Override
     public Item searchById(String id) {
-        return null;
+        return itemRepository.searchItemId(id);
     }
 }
 

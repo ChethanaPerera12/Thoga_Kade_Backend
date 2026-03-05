@@ -1,8 +1,6 @@
 package edu.icet.service;
 
-import edu.icet.model.Customer;
 import edu.icet.model.Item;
-import edu.icet.repository.CustomerRepository;
 
 import java.util.List;
 
