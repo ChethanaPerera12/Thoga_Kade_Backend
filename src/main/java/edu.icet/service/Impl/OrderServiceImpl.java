@@ -3,14 +3,15 @@ package edu.icet.service.Impl;
 import edu.icet.model.Order;
 import edu.icet.repository.OrderRepository;
 import edu.icet.service.OrderService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-@RequiredArgsConstructor
+
 public class OrderServiceImpl implements OrderService {
-    private final OrderRepository orderRepository;
+    @Autowired
+    OrderRepository orderRepository;
 
     @Override
     public boolean updateOrder(Order order) {
@@ -18,7 +19,7 @@ public class OrderServiceImpl implements OrderService {
     }
     @Override
     public boolean addOrder(Order order) {
-        return orderRepository.addOrder();
+        return orderRepository.addOrder(order);
     }
 
     @Override

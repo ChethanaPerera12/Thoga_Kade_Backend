@@ -2,15 +2,16 @@ package edu.icet.controller;
 
 import edu.icet.model.Order;
 import edu.icet.service.OrderService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
+@RequestMapping("/order")
 public class OrderController {
-    private final OrderService orderService;
+    @Autowired
+    OrderService orderService;
 
     @GetMapping("get-all")
     public List<Order> getOreder() {

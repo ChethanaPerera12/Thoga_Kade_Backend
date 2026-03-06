@@ -9,5 +9,5 @@ public interface OrderRepository {
     boolean updateOrder(Order order);
     boolean deleteOrder(String id);
     Order searchById(String id);
-    boolean addOrder();
+    boolean addOrder(Order order);
 }
