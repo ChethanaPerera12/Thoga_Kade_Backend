@@ -8,14 +8,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-
+@RequestMapping("/customer")
+@CrossOrigin
 public class CustomerController {
     @Autowired
     CustomerService customerService;
 
     @GetMapping("/get-all")
-    public List<Customer> getAll(){return customerService.getAll();
-    }
+    public List<Customer> getAll()
+    {return customerService.getAll();}
     @PostMapping("/add-customer")
     public boolean addCustomer(@RequestBody Customer customer){
         return customerService.addCustomer(customer);
