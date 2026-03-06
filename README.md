@@ -33,7 +33,7 @@
 - ✅ **Interactive API documentation** via Swagger UI
 - ✅ Clean layered architecture: Controller → Service → Repository
 - ✅ **Cross-Origin (CORS)** support enabled
-- ✅ Lombok-powered models for clean, boilerplate-free code
+- ✅ Lombok powered models for clean, boilerplate free code
 
 ---
 
