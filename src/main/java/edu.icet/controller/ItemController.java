@@ -10,9 +10,10 @@ import java.util.List;
 @RestController
 @RequestMapping("/item")
 @CrossOrigin
+@RequiredArgsConstructor
 public class ItemController {
-    @Autowired
-    ItemService itemService;
+
+    private final ItemService itemService;
 
     @GetMapping("/get-all-items")
     public List<Item> getItem(){
